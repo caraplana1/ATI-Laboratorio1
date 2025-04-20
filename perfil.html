@@ -3,29 +3,82 @@
 	<head>
 		<title>Cristian Landaez</title>
 		<meta charset="UTF-8">
-
 		<link rel="icon" type="image/x-icon" href="./images/logociens.ico">
+		<style>
+			body{
+				display: flex;
+				padding: 10% 0%;
+				margin-left: 20%;
+			}
+
+			img {
+				border-radius: 20% 0% 0% 0%;
+			}
+
+			main {
+				width: 55%;
+				margin-left: 1.5%;
+				border: 1px solid black;
+				padding: 0% 2%;
+				box-shadow: 7px 5px 0px rgba(0, 0, 0, 50%);
+			}
+
+			h1{
+				color: orange;
+			}
+
+			.lista{
+				display: flex;
+			}
+
+			.preguntas{
+				width: 70%;
+			}
+
+			.respuestas{
+				width: 100%;
+			}
+
+			.email{
+				color: orange;
+				text-decoration: none;
+			}
+
+			.email:visited{
+				color: red;
+			}
+
+
+		</style>
 	</head>
 	<body>
-		<img src="./images/27597219.jpg" width="200px" height="200px">
+		<img src="./images/27597219.jpg" width="200px" height="350px">
 		<main>
 			<h1>Cristian Landaez</h1>
 			<p id="descirption">
-				Estudiante de computacion, ingresado en el año 2019. 
+				Estudiante de computacion, ingresado en el año 2019. Soy auxiliar docente del centro de computacion paralela y distribuida. En mis tiempos libres disfruto mucho bailar y salir con mis amigos.
 			</p>
-			<div>
-				<span>Mi color favorito es:</span> <span>Negro</span>
-				<br>
-				<span>Mi libro favorito es:</span> <span>Sueñan los androides con ovejas electricas</span>
-				<br>
-				<span>Mi estilo de musica preferida:</span> <span>De preferencia regueton</span>
-				<br>
-				<span>Videojuego favoritos:</span> <span>Path of exile 2, Baldur's Gate III</span>
-				<br>
-				<span>Lenguajes Preferidos:</span> <span>C#, python, C++</span>
-				<br>
-				<span>Si necesitan comunicarse conmigo me pueden escribir a: <a href="mailto:cristianlandaez@gmail.com" target="_blank">cristianlandaez@gmail.com</a></span>
+			<br>
+			<div class="lista">
+				<div class="preguntas">
+					<div>Mi color favorito es:</div>
+					<div>Mi estilo de musica preferida:</div>
+					<div>Mi libro favorito es:</div>
+					<div>Videojuego favoritos:</div>
+					<div><strong>Lenguajes Preferidos:</strong></div>
+				</div>
+				<div class="respuestas">
+					<div class="derecha">Negro</div>
+					<div class="derecha">Regueton</div>
+					<div class="derecha">Sueñan los androides con ovejas electricas</div>
+					<div class="derecha">Path of exile 2, Baldur's Gate III</div>
+					<div class="derecha"><strong>C#, python, C++</strong></div>
+				</div>
 			</div>
+			<br>
+			<br>
+			<div>Si necesitan comunicarse conmigo me pueden escribir a: <a href="mailto:cristianlandaez@gmail.com" class="email" target="_blank">cristianlandaez@gmail.com</a></div>
+			<br>
 		</main>
 	</body>
 </html>
