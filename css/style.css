@@ -90,11 +90,54 @@ nav> ul> li> p{
 	padding-top: 1%;
 }
 
-h1{
+#titulo-index{
 	margin: 0;
 }
 
-img{
+.portada{
 	height: 150px;
 	max-width: 100%;
+}
+
+.main-tarjeta{
+	display: flex;
+	justify-content: center;
+	padding: 10% 0%;
+}
+
+.round-img {
+	border-radius: 20% 0% 0% 0%;
+}
+
+.tarjeta {
+	width: 55%;
+	margin-left: 1.5%;
+	border: 1px solid black;
+	padding: 0% 2%;
+	box-shadow: 7px 5px 0px rgba(0, 0, 0, 50%);
+}
+
+#titulo-tarjeta{
+	color: orange;
+}
+
+.lista{
+	display: flex;
+}
+
+.preguntas{
+	width: 70%;
+}
+
+.respuestas{
+	width: 100%;
+}
+
+.email{
+	color: orange;
+	text-decoration: none;
+}
+
+.email:visited{
+	color: red;
 }
