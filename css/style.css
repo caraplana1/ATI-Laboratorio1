@@ -50,6 +50,7 @@ section> ul> li{
 	background-color: rgba(230, 230, 230, 25%);
 	box-shadow: 5px 5px 0px rgba(0, 0, 0, 25%);;
 	width: 15%;
+	min-width: 100px;
 	margin: 1%;
 	padding: 3%;
 	text-align: center;
@@ -102,6 +103,7 @@ nav> ul> li> p{
 .main-tarjeta{
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
 	padding: 10% 0%;
 }
 
@@ -110,7 +112,6 @@ nav> ul> li> p{
 }
 
 .tarjeta {
-	width: 45%;
 	margin-left: .5%;
 	border: 1px solid black;
 	padding: 0% 2%;
@@ -133,11 +134,63 @@ nav> ul> li> p{
 	width: 100%;
 }
 
-.email{
-	color: orange;
+a{
+	display: block;
 	text-decoration: none;
+	color: #609ebf;
+	overflow: hidden;
 }
 
-.email:visited{
+a:focus{
 	color: red;
 }
+
+.email{
+	display: inline;
+}
+
+.email:link{
+	color: orange;
+}
+
+.email:focus{
+	color: red;
+}
+
+@media  (max-width: 768px) {
+	body{
+		font-size: 10px;
+	}
+
+	section> ul> li{
+		margin: 3% 1.5%;
+	}
+
+	.tarjeta{
+		width: 50%;
+		min-width: 280px;
+	}
+
+	.round-img{
+		width: 200px;
+		height: 250px;
+		margin-bottom: 5%;
+	}
+}
+  
+@media (min-width: 769px) {
+	body{
+		font-size: 14px;
+	}
+	
+	.tarjeta{
+		width: 45%;
+		min-width: 480px;
+	}
+
+	.round-img{
+		width: 200px;
+		height: 350px;
+	}
+}
+  
