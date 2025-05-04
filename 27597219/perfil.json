@@ -1,0 +1,13 @@
+const perfil = {	
+	"nombre":"Cristian Landaez",
+	"descripcion":"Estudiante de computacion, ingresado en el año 2019. Soy auxiliar docente del centro de computacion paralela y distribuida. En mis tiempos libres disfruto mucho bailar y salir con mis amigos.",
+	"color": "Negro",
+	"libro": ["Sueñan los androides con ovejas electricas"],
+	"musica": ["Regueton"],
+	"video_juego": ["Path of exile 2, Baldur's Gate III"],
+	"lenguajes": ["C#", "python", "C++"],
+	"email":"cristianlandaez@gmail.com",
+	"ci": "27597219",
+	"genero":"masculino",
+	"fecha_nacimiento":"25/10/1999"
+}
