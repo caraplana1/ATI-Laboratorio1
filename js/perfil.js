@@ -14,16 +14,19 @@ function CargarJsonConfig() {
 }
 
 function CargarJsonAlumni() {
-    fetch('./../27597219/perfil.json')
-    .then(respuesta => {
-        if (!respuesta.ok) throw new Error('Error al cargar el perfil');
-        return respuesta.json();
-    })
-    .then(datos => {
-        const datosActualizados = mezclarConURL(datos); // Combina JSON + parámetros
-        CargarAlumno(datosActualizados);
-    })
-    .catch(console.error);
+	const ci = new URLSearchParams(window.location.search).get('ci');
+	if (!ci) throw new Error('Parámetro "ci" no encontrado en la URL');
+
+	fetch(`../${ci}/perfil.json`)
+	.then(respuesta => {
+		if (!respuesta.ok) throw new Error('Perfil no encontrado');
+		return respuesta.json();
+	})
+	.then(datos => {
+		const datosActualizados = mezclarConURL(datos);
+		CargarAlumno(datosActualizados);
+	})
+	.catch(console.error);
 }
 
 function mezclarConURL(datos) {
@@ -74,12 +77,12 @@ function cargarConfig(config) {
 }
 
 function CargarAlumno(datos) {
-    document.getElementById("nombre").textContent = datos.nombre;
+    document.getElementById("titulo-tarjeta").textContent = datos.nombre;
     document.getElementById("descripcion").textContent = datos.descripcion;
     
     const campos = ['color', 'musica', 'libro', 'video_juego', 'lenguajes'];
     document.querySelectorAll('.derecha').forEach((elemento, index) => {
-        elemento.textContent = index === 4 ? `<strong>${datos[campos[index]]}</strong>` : datos[campos[index]];
+        elemento.innerHTML = index === 4 ? `<strong>${datos[campos[index]]}</strong>` : datos[campos[index]];
     });
 
     if (datos.imagen) {
