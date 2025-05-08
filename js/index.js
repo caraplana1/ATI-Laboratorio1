@@ -23,7 +23,26 @@ function cargarConfig(config){
 	placeholder[0].placeholder = " " + config.nombre
 }
 
+function cargarEstudiantes(){
+	fetch('../datos/index.json')
+	.then(respuesta => {
+		if (!respuesta.ok) throw new Error('Error al cargar la configuración');
+		return respuesta.json();
+	})
+	.then(datos => {
+		mostrarEstudiante(datos)
+	})
+	.catch(error => {
+		console.error('Error:', error);
+	});
+
+}
+
+function mostrarEstudiante(datos){
+}
+
 function Main()
 {
 	CargarJsonConfig();
+	cargarEstudiantes();
 }
