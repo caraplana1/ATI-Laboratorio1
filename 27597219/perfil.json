@@ -1,4 +1,4 @@
-const perfil = {	
+{	
 	"nombre":"Cristian Landaez",
 	"descripcion":"Estudiante de computacion, ingresado en el año 2019. Soy auxiliar docente del centro de computacion paralela y distribuida. En mis tiempos libres disfruto mucho bailar y salir con mis amigos.",
 	"color": "Negro",

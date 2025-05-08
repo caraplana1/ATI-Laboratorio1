@@ -137,6 +137,14 @@ nav> ul> li> p{
 	width: 100%;
 }
 
+#email{
+	display: inline;
+}
+
+.email{
+	display: inline;
+}
+
 a{
 	display: block;
 	text-decoration: none;
