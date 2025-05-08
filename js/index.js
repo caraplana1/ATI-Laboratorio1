@@ -39,6 +39,32 @@ function cargarEstudiantes(){
 }
 
 function mostrarEstudiante(datos){
+	let lista = document.getElementById("estudiantes")
+	datos.forEach(persona => {
+		const li = document.createElement('li');
+        const picture = document.createElement('picture');
+        const img = document.createElement('img');
+        const enlace = document.createElement('a');
+
+        // Configurar elementos
+		img.className = 'portada';
+        img.src = persona.imagen;
+        img.alt = `Foto de ${persona.nombre}`;
+        img.loading = 'lazy'; // Optimización de carga
+        
+        enlace.name = 'persona';
+        enlace.href = `perfil.html?ci=${persona.ci}`; // Enlace al perfil con parámetro CI
+        enlace.textContent = persona.nombre;
+        enlace.classList.add('enlace-perfil');
+
+        // Estructurar elementos
+        picture.appendChild(img);
+        li.appendChild(picture);
+        li.appendChild(enlace);
+        
+        // Agregar a la lista
+        lista.appendChild(li);
+	});
 }
 
 function Main()
