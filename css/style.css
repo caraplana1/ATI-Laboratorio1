@@ -107,7 +107,7 @@ nav> ul> li> p{
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	padding: 10% 0%;
+	margin: 10% 0%;
 }
 
 .round-img {
@@ -201,7 +201,7 @@ a:focus{
 
 	.round-img{
 		width: 200px;
-		height: 350px;
+		height: 100%;
 	}
 }
   
