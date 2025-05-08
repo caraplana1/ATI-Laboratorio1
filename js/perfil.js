@@ -1,16 +1,25 @@
 document.addEventListener('DOMContentLoaded', Main());
 
+// Modificar función CargarJsonConfig (igual que en index.js)
 function CargarJsonConfig() {
-    fetch('../conf/configES.json')
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang') || 'ES';
+
+    fetch(`../conf/config${lang.toUpperCase()}.json`)
     .then(respuesta => {
-        if (!respuesta.ok) throw new Error('Error al cargar la configuración');
+        if (!respuesta.ok) throw new Error('Idioma no soportado');
         return respuesta.json();
     })
     .then(config => {
         cargarConfig(config);
         aplicarParametrosURL();
     })
-    .catch(console.error);
+    .catch(error => {
+        console.error('Error:', error);
+        fetch('../conf/configES.json')
+        .then(res => res.json())
+        .then(config => cargarConfig(config));
+    });
 }
 
 function CargarJsonAlumni() {
@@ -43,8 +52,7 @@ function mezclarConURL(datos) {
         video_juego: params.get('video_juego') || datos.video_juego,
         lenguajes: params.get('lenguajes') || datos.lenguajes,
         email: params.get('email') || datos.email,
-        // Eliminamos el parámetro 'foto' ya que usamos la ruta del CI
-        imagen: datos.imagen // Mantenemos la ruta generada desde el CI
+        imagen: datos.imagen 
     };
 }
 
@@ -86,11 +94,9 @@ function CargarAlumno(datos) {
     const img = document.getElementById('foto-perfil');
     img.alt = `Foto de ${datos.nombre}`;
     
-    // Verify image exists
     const testImage = new Image();
     testImage.src = datos.imagen;
     testImage.onerror = () => {
-        // Try PNG if JPG fails
         img.src = datos.imagen.replace('.jpg', '.png');
     };
     testImage.onload = () => {
