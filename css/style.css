@@ -168,6 +168,11 @@ a:focus{
 	color: red;
 }
 
+#error{
+	color: #609ebf;
+	margin: 25% 0%;
+}
+
 @media  (max-width: 768px) {
 	body{
 		font-size: 10px;
